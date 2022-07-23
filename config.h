@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h> // For Multimedia control keys
+
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
@@ -66,9 +68,15 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_accent, "-sf", col_sel_fg, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *voldowncmd[] = { "pulsemixer", "--change-volume", "-5", NULL };
+static const char *volupcmd[] = { "pulsemixer", "--change-volume", "+5", NULL };
+static const char *volmutecmd[] = { "pulsemixer", "--toggle-mute", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ 0,                       XF86XK_AudioLowerVolume,      spawn,          {.v = voldowncmd } },
+	{ 0,                       XF86XK_AudioRaiseVolume,      spawn,          {.v = volupcmd } },
+	{ 0,                       XF86XK_AudioMute,      spawn,          {.v = volmutecmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
