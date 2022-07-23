@@ -6,17 +6,17 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code:size=18", "fontawesome:size=18" };
-static const char dmenufont[]       = "Fira Code:size=18";
+static const char *fonts[]          = { "Fira Code:size=16", "fontawesome:size=16" };
+static const char dmenufont[]       = "Fira Code:size=16";
 static const char col_bg[]          = "#282828";
 static const char col_border[]      = "#928374";
 static const char col_fg[]          = "#ebdbb2";
 static const char col_sel_fg[]      = "#282828";
 static const char col_accent[]      = "#83a598";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg, 			col_bg, 		col_border },
-	[SchemeSel]  = { col_sel_fg, 	col_accent, col_accent },
+	/*               fg      bg      border   */
+	[SchemeNorm] = { col_fg, col_bg, col_border },
+	[SchemeSel]  = { col_sel_fg, col_accent, col_accent },
 };
 
 /* tagging */
@@ -30,6 +30,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Brave",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
