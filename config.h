@@ -8,8 +8,8 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code:size=16", "fontawesome:size=16" };
-static const char dmenufont[]       = "Fira Code:size=16";
+static const char *fonts[]          = { "Fira Code Nerd Font:size=16"};
+static const char dmenufont[]       = "Fira Code Nerd Font:size=16";
 static const char col_bg[]          = "#282828";
 static const char col_border[]      = "#928374";
 static const char col_fg[]          = "#ebdbb2";
