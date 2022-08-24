@@ -74,7 +74,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,                       XF86XK_AudioLowerVolume,      spawn,          SHCMD("pulsemixer --change-volume -5 && kill -35 $(pidof dwmblocks)") },
 	{ 0,                       XF86XK_AudioRaiseVolume,      spawn,          SHCMD("pulsemixer --change-volume +5 && kill -35 $(pidof dwmblocks)") },
-	{ 0,                       XF86XK_AudioMute,      spawn,          SHCMD("pulsemixer --toggle-mute && kill -35 $(pidof dwmblocks") },
+	{ 0,                       XF86XK_AudioMute,      spawn,          SHCMD("pulsemixer --toggle-mute && kill -35 $(pidof dwmblocks)") },
+	{ ALTMOD,                       XK_space,      spawn,          SHCMD("kill -36 $(pidof dwmblocks)") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
