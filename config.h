@@ -34,6 +34,7 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Brave",    NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Code",     NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "discord",  NULL,       NULL,       1 << 7,       0,            1 },
 };
 
 /* layout(s) */
