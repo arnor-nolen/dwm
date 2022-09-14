@@ -538,8 +538,9 @@ clientmessage(XEvent *e)
 			setfullscreen(c, (cme->data.l[0] == 1 /* _NET_WM_STATE_ADD    */
 				|| (cme->data.l[0] == 2 /* _NET_WM_STATE_TOGGLE */ && !c->isfullscreen)));
 	} else if (cme->message_type == netatom[NetActiveWindow]) {
-		if (c != selmon->sel && !c->isurgent)
-			seturgent(c, 1);
+		if (c != selmon->sel && !c->isurgent) {
+			//seturgent(c, 1);
+                }
 	}
 }
 
@@ -2289,6 +2290,15 @@ main(int argc, char *argv[])
 #endif /* __OpenBSD__ */
 	scan();
 	runautostart();
+
+        // Automatically open specific tag
+        for (int i = 0; i != LENGTH(default_tags); ++i) {
+                Arg mon = {.i = i};
+                Arg arg_tag= {.ui = 1 << default_tags[i]};
+                focusnthmon(&mon);
+                view(&arg_tag);
+        }
+
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
