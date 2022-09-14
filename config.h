@@ -8,8 +8,8 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Nerd Font:size=16"};
-static const char dmenufont[]       = "Fira Code Nerd Font:size=16";
+static const char *fonts[]          = { "Fira Code Nerd Font Mono:size=16"};
+static const char dmenufont[]       = "Fira Code Nerd Font Mono:size=16";
 static const char col_bg[]          = "#282828";
 static const char col_border[]      = "#928374";
 static const char col_fg[]          = "#ebdbb2";
@@ -22,7 +22,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+// static const char *tags[] = { "₁", "₂", "₃", "韛₄", "₅", "?₆", "?₇", "ﭮ₈", "₉" };
+static const char *tags[] = { "", "", "", "韛", "?", "?", "?", "ﭮ", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
