@@ -2299,6 +2299,10 @@ main(int argc, char *argv[])
                 view(&arg_tag);
         }
 
+        // Focus on primary monitor
+        Arg mon = {.i = 0};
+        focusnthmon(&mon);
+
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
