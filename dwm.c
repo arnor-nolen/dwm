@@ -2291,17 +2291,13 @@ main(int argc, char *argv[])
 	scan();
 	runautostart();
 
-        // Automatically open specific tag
-        for (int i = 0; i != LENGTH(default_tags); ++i) {
-                Arg mon = {.i = i};
-                Arg arg_tag= {.ui = 1 << default_tags[i]};
-                focusnthmon(&mon);
-                view(&arg_tag);
-        }
-
-        // Focus on primary monitor
-        Arg mon = {.i = 0};
+    // Automatically open specific tag
+    for (int i = LENGTH(default_tags) - 1; i != -1; --i) {
+        Arg mon = {.i = i};
+        Arg arg_tag= {.ui = 1 << default_tags[i]};
         focusnthmon(&mon);
+        view(&arg_tag);
+    }
 
 	run();
 	cleanup();
